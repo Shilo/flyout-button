@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5hjp6yccxqb4"
-path="res://.godot/imported/Ellipse.svg-78d690ac12bf3a3dc2dc02b2b168b534.ctex"
+path="res://.godot/imported/Ellipse.svg-f7bf6bdf121f53f690077a759cd9e386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ez_tile_map_editor/icons/Ellipse.svg"
-dest_files=["res://.godot/imported/Ellipse.svg-78d690ac12bf3a3dc2dc02b2b168b534.ctex"]
+source_file="res://icons/Ellipse.svg"
+dest_files=["res://.godot/imported/Ellipse.svg-f7bf6bdf121f53f690077a759cd9e386.ctex"]
 
 [params]
 
