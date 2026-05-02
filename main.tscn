@@ -1,8 +1,155 @@
-[gd_scene format=3 uid="uid://dnmdvjqwkmr57"]
+[gd_scene load_steps=2 format=3 uid="uid://dnmdvjqwkmr57"]
 
-[node name="HBoxContainer" type="HBoxContainer" unique_id=46437319]
+[ext_resource type="Script" path="res://flyout_button.gd" id="1_flyout"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=46437319]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="TopToolbar" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ShapeFlyoutAuto" type="Button" parent="TopToolbar"]
+layout_mode = 2
+tooltip_text = "Shape tools"
+script = ExtResource("1_flyout")
+items = Array[Dictionary]([{
+"color": Color(0.878431, 0.878431, 0.878431, 1),
+"filled": false,
+"label": "Rectangle Outline",
+"shape": "rectangle",
+"state": "rectangle_outline"
+}, {
+"icon_path": "res://icons/RectangleFilled.svg",
+"label": "Rectangle Filled",
+"state": "rectangle_filled"
+}, {
+"icon_path": "res://icons/Ellipse.svg",
+"label": "Ellipse Outline",
+"state": "ellipse_outline"
+}, {
+"icon_path": "res://icons/EllipseFilled.svg",
+"label": "Ellipse Filled",
+"state": "ellipse_filled"
+}])
+
+[node name="ShapeFlyoutDown" type="Button" parent="TopToolbar"]
+layout_mode = 2
+tooltip_text = "Shape tools down"
+script = ExtResource("1_flyout")
+flyout_direction = 3
+selected_index = 2
+items = Array[Dictionary]([{
+"color": Color(0.878431, 0.878431, 0.878431, 1),
+"filled": false,
+"label": "Rectangle Outline",
+"shape": "rectangle",
+"state": "rectangle_outline"
+}, {
+"icon_path": "res://icons/RectangleFilled.svg",
+"label": "Rectangle Filled",
+"state": "rectangle_filled"
+}, {
+"icon_path": "res://icons/Ellipse.svg",
+"label": "Ellipse Outline",
+"state": "ellipse_outline"
+}, {
+"icon_path": "res://icons/EllipseFilled.svg",
+"label": "Ellipse Filled",
+"state": "ellipse_filled"
+}])
+
+[node name="EditorIconFlyout" type="Button" parent="TopToolbar"]
+layout_mode = 2
+tooltip_text = "Editor icon tools"
+script = ExtResource("1_flyout")
+button_side = 28
+icon_side = 18
+auto_preferred_direction = 3
+selected_index = 1
+items = Array[Dictionary]([{
+"editor_icon": "Node2D",
+"label": "Node2D",
+"state": "editor_node_2d"
+}, {
+"editor_icon": "Control",
+"label": "Control",
+"state": "editor_control"
+}, {
+"editor_icon": "Button",
+"label": "Button",
+"state": "editor_button"
+}, {
+"editor_icon": "Animation",
+"label": "Animation",
+"state": "editor_animation"
+}])
+
+[node name="CenterSpace" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomToolbar" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BottomSpacer" type="Control" parent="BottomToolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="AutoBoundsFlyout" type="Button" parent="BottomToolbar"]
+layout_mode = 2
+tooltip_text = "Auto bounds shape tools"
+script = ExtResource("1_flyout")
+auto_preferred_direction = 1
+selected_index = 3
+items = Array[Dictionary]([{
+"color": Color(0.878431, 0.878431, 0.878431, 1),
+"filled": false,
+"label": "Rectangle Outline",
+"shape": "rectangle",
+"state": "rectangle_outline"
+}, {
+"icon_path": "res://icons/RectangleFilled.svg",
+"label": "Rectangle Filled",
+"state": "rectangle_filled"
+}, {
+"icon_path": "res://icons/Ellipse.svg",
+"label": "Ellipse Outline",
+"state": "ellipse_outline"
+}, {
+"icon_path": "res://icons/EllipseFilled.svg",
+"label": "Ellipse Filled",
+"state": "ellipse_filled"
+}])
+
+[node name="EditorIconFlyoutLeft" type="Button" parent="BottomToolbar"]
+layout_mode = 2
+tooltip_text = "Editor icon tools left"
+script = ExtResource("1_flyout")
+flyout_direction = 2
+selected_index = 0
+items = Array[Dictionary]([{
+"editor_icon": "2D",
+"label": "2D",
+"state": "editor_2d"
+}, {
+"editor_icon": "3D",
+"label": "3D",
+"state": "editor_3d"
+}, {
+"editor_icon": "Script",
+"label": "Script",
+"state": "editor_script"
+}, {
+"editor_icon": "AssetStore",
+"label": "Asset Store",
+"state": "editor_asset_store"
+}])

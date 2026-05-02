@@ -441,6 +441,8 @@ func _texture_for_item(item: Dictionary, index: int) -> Texture2D:
 
 
 func _get_editor_icon(icon_name: StringName) -> Texture2D:
+	if not Engine.is_editor_hint():
+		return null
 	if not Engine.has_singleton(&"EditorInterface"):
 		return null
 
