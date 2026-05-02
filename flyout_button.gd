@@ -2,32 +2,23 @@
 extends OptionButton
 class_name FlyoutButton
 
-const FlyoutButtonItem := preload("res://flyout_button_item.gd")
-
-signal state_clicked(state: StringName, index: int, item: FlyoutButtonItem)
-signal state_changed(state: StringName, index: int, item: FlyoutButtonItem)
-
-enum PopupDirection { AUTO, RIGHT, LEFT, UP, DOWN }
+enum PopupDirection { RIGHT, LEFT, UP, DOWN }
 
 const EDITOR_ICONS_TYPE := &"EditorIcons"
 
-@export var popup_direction := PopupDirection.AUTO
+@export var popup_direction := PopupDirection.DOWN
 
 @export var options: Array[FlyoutButtonItem] = []:
 	set(value):
 		options = value
 		_rebuild_options()
 
-@export var selected_state: StringName:
+var selected_title: StringName:
 	get:
-		return _selected_state
-	set(value):
-		_selected_state = value
-		_select_state(value)
+		return get_selected_title()
 
 var _transparent_icon: ImageTexture
 var _popup_was_positioned := false
-var _selected_state: StringName
 
 
 func _init() -> void:
@@ -52,6 +43,19 @@ func _ready() -> void:
 	_rebuild_options()
 
 
+func _shortcut_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.echo:
+		return
+
+	for index in range(options.size()):
+		var item := options[index]
+		if item != null and item.shortcut != null and item.shortcut.matches_event(event):
+			select(index)
+			_on_item_selected(index)
+			accept_event()
+			return
+
+
 func _process(_delta: float) -> void:
 	var popup := get_popup()
 	if popup.visible:
@@ -73,6 +77,13 @@ func get_selected_item() -> FlyoutButtonItem:
 	return options[index]
 
 
+func get_selected_title() -> StringName:
+	var item := get_selected_item()
+	if item == null:
+		return &""
+	return item.title
+
+
 func _rebuild_options() -> void:
 	if not is_inside_tree():
 		return
@@ -84,26 +95,26 @@ func _rebuild_options() -> void:
 	for index in range(options.size()):
 		var item: FlyoutButtonItem = options[index]
 		var item_icon := _resolve_icon(item)
-		add_icon_item(item_icon, "", index)
-		set_item_metadata(index, item.state)
+		var item_text := "" if item_icon != null else String(item.title)
+		add_icon_item(item_icon, item_text, index)
+		set_item_metadata(index, item.title)
 		set_item_tooltip(index, item.tooltip)
 		popup.set_item_as_radio_checkable(index, false)
 		popup.set_item_as_checkable(index, false)
+		if item.shortcut != null:
+			popup.set_item_shortcut(index, item.shortcut)
 		if item_icon != null:
 			popup.set_item_icon_max_width(index, item_icon.get_width())
 
 	if options.is_empty():
 		icon = null
+		text = ""
 		tooltip_text = ""
-		_selected_state = &""
 		return
 
-	var index_to_select := _index_for_state(_selected_state)
-	if index_to_select == -1:
-		index_to_select = 0
-		_selected_state = options[0].state
-	select(index_to_select)
-	_apply_selected_item(index_to_select)
+	if selected < 0 or selected >= options.size():
+		select(0)
+	_apply_selected_item(selected)
 
 
 func _configure_button_theme() -> void:
@@ -147,39 +158,15 @@ func _on_item_selected(index: int) -> void:
 	if index < 0 or index >= options.size():
 		return
 
-	var previous_state := _selected_state
 	_apply_selected_item(index)
 	button_pressed = true
-	state_clicked.emit(_selected_state, index, options[index])
-	if _selected_state != previous_state:
-		state_changed.emit(_selected_state, index, options[index])
 
 
 func _apply_selected_item(index: int) -> void:
 	var item: FlyoutButtonItem = options[index]
-	_selected_state = item.state
 	icon = _resolve_icon(item)
-	text = ""
+	text = "" if icon != null else String(item.title)
 	tooltip_text = item.tooltip
-
-
-func _select_state(state: StringName) -> void:
-	if not is_inside_tree() or options.is_empty():
-		return
-
-	var index := _index_for_state(state)
-	if index == -1:
-		return
-
-	select(index)
-	_apply_selected_item(index)
-
-
-func _index_for_state(state: StringName) -> int:
-	for index in range(options.size()):
-		if options[index].state == state:
-			return index
-	return -1
 
 
 func _position_popup() -> void:
@@ -217,16 +204,49 @@ func _position_popup() -> void:
 
 
 func _choose_direction() -> int:
-	if popup_direction != PopupDirection.AUTO:
-		return popup_direction
+	var preferred := popup_direction
+	var popup := get_popup()
+	var button_rect := get_global_rect()
+	var popup_size := Vector2(popup.size)
+	if popup_size.x <= 0.0 or popup_size.y <= 0.0:
+		popup_size = Vector2(popup.get_contents_minimum_size())
 
-	var button_center := get_global_rect().get_center()
-	var viewport_center := get_viewport_rect().size * 0.5
-	var delta := viewport_center - button_center
+	if _direction_fits(preferred, button_rect, popup_size):
+		return preferred
 
-	if abs(delta.x) > abs(delta.y):
-		return PopupDirection.RIGHT if delta.x >= 0.0 else PopupDirection.LEFT
-	return PopupDirection.DOWN if delta.y >= 0.0 else PopupDirection.UP
+	var fallbacks := _fallback_directions(preferred)
+	for fallback in fallbacks:
+		if _direction_fits(fallback, button_rect, popup_size):
+			return fallback
+
+	return fallbacks[0] if not fallbacks.is_empty() else preferred
+
+
+func _fallback_directions(preferred: int) -> Array[int]:
+	match preferred:
+		PopupDirection.DOWN:
+			return [PopupDirection.UP, PopupDirection.RIGHT, PopupDirection.LEFT]
+		PopupDirection.UP:
+			return [PopupDirection.DOWN, PopupDirection.RIGHT, PopupDirection.LEFT]
+		PopupDirection.LEFT:
+			return [PopupDirection.RIGHT, PopupDirection.DOWN, PopupDirection.UP]
+		PopupDirection.RIGHT:
+			return [PopupDirection.LEFT, PopupDirection.DOWN, PopupDirection.UP]
+	return [PopupDirection.DOWN, PopupDirection.UP, PopupDirection.RIGHT, PopupDirection.LEFT]
+
+
+func _direction_fits(direction: int, button_rect: Rect2, popup_size: Vector2) -> bool:
+	var viewport_size := get_viewport_rect().size
+	match direction:
+		PopupDirection.RIGHT:
+			return button_rect.end.x + popup_size.x <= viewport_size.x
+		PopupDirection.LEFT:
+			return button_rect.position.x - popup_size.x >= 0.0
+		PopupDirection.UP:
+			return button_rect.position.y - popup_size.y >= 0.0
+		PopupDirection.DOWN:
+			return button_rect.end.y + popup_size.y <= viewport_size.y
+	return false
 
 
 func _resolve_icon(item: FlyoutButtonItem) -> Texture2D:
