@@ -1,46 +1,53 @@
 @tool
-extends OptionButton
+extends Button
 class_name FlyoutButton
 
+signal item_selected(index: int)
+
 enum PopupDirection { RIGHT, LEFT, UP, DOWN }
+enum ContentDirection { HORIZONTAL, VERTICAL }
 
 const EDITOR_ICONS_TYPE := &"EditorIcons"
 
 @export var popup_direction := PopupDirection.DOWN
+@export var content_direction := ContentDirection.VERTICAL
 
 @export var options: Array[FlyoutButtonItem] = []:
 	set(value):
 		options = value
-		_rebuild_options()
+		if selected_index >= options.size():
+			selected_index = max(options.size() - 1, 0)
+		_refresh_selected()
+
+@export var selected_index := 0:
+	set(value):
+		selected_index = max(value, 0)
+		_refresh_selected()
 
 var selected_title: StringName:
 	get:
 		return get_selected_title()
 
-var _transparent_icon: ImageTexture
-var _popup_was_positioned := false
+var _popup: PopupPanel
+var _content: BoxContainer
+var _popup_buttons: Array[Button] = []
 
 
 func _init() -> void:
 	flat = true
 	toggle_mode = true
-	fit_to_longest_item = false
-	allow_reselect = true
-	alignment = HORIZONTAL_ALIGNMENT_CENTER
 	text = ""
+	alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 
 func _ready() -> void:
-	_ensure_transparent_icon()
-	_configure_button_theme()
-	_configure_popup()
-
-	if not item_selected.is_connected(_on_item_selected):
-		item_selected.connect(_on_item_selected)
 	if not pressed.is_connected(_on_pressed):
 		pressed.connect(_on_pressed)
+	_refresh_selected()
 
-	_rebuild_options()
+
+func _exit_tree() -> void:
+	_free_popup()
 
 
 func _input(event: InputEvent) -> void:
@@ -54,31 +61,57 @@ func _input(event: InputEvent) -> void:
 	for index in range(options.size()):
 		var item := options[index]
 		if item != null and item.shortcut != null and item.shortcut.matches_event(event):
-			select(index)
-			_on_item_selected(index)
+			select_index(index)
 			get_viewport().set_input_as_handled()
 			return
 
 
 func _process(_delta: float) -> void:
-	var popup := get_popup()
-	if popup.visible:
+	if is_popup_open():
 		_position_popup()
-	elif _popup_was_positioned:
-		_popup_was_positioned = false
+	else:
 		set_process(false)
 
 
-func add_flyout_item(item: FlyoutButtonItem) -> void:
-	options.append(item)
-	_rebuild_options()
+func open_popup() -> void:
+	if options.is_empty():
+		return
+
+	if _popup == null:
+		_build_popup()
+	else:
+		_rebuild_popup_items()
+
+	_popup.popup()
+	_popup.reset_size()
+	_position_popup()
+	set_process(true)
+
+
+func close_popup() -> void:
+	if is_popup_open():
+		_popup.hide()
+
+
+func is_popup_open() -> bool:
+	return is_instance_valid(_popup) and _popup.visible
+
+
+func select_index(index: int) -> void:
+	if index < 0 or index >= options.size():
+		return
+
+	selected_index = index
+	button_pressed = true
+	_refresh_popup_button_states()
+	item_selected.emit(index)
+	close_popup()
 
 
 func get_selected_item() -> FlyoutButtonItem:
-	var index := selected
-	if index < 0 or index >= options.size():
+	if selected_index < 0 or selected_index >= options.size():
 		return null
-	return options[index]
+	return options[selected_index]
 
 
 func get_selected_title() -> StringName:
@@ -88,102 +121,106 @@ func get_selected_title() -> StringName:
 	return item.title
 
 
-func _rebuild_options() -> void:
+func _on_pressed() -> void:
+	button_pressed = true
+	if is_popup_open():
+		close_popup()
+	else:
+		open_popup()
+
+
+func _refresh_selected() -> void:
 	if not is_inside_tree():
 		return
 
-	clear()
-	_configure_popup()
-	var popup := get_popup()
-
-	for index in range(options.size()):
-		var item: FlyoutButtonItem = options[index]
-		var item_icon := _resolve_icon(item)
-		var item_text := "" if item_icon != null else String(item.title)
-		add_icon_item(item_icon, item_text, index)
-		set_item_metadata(index, item.title)
-		set_item_tooltip(index, item.tooltip)
-		popup.set_item_as_radio_checkable(index, false)
-		popup.set_item_as_checkable(index, false)
-		if item_icon != null:
-			popup.set_item_icon_max_width(index, item_icon.get_width())
-
-	if options.is_empty():
+	var item := get_selected_item()
+	if item == null:
 		icon = null
 		text = ""
 		tooltip_text = ""
 		return
 
-	if selected < 0 or selected >= options.size():
-		select(0)
-	_apply_selected_item(selected)
-
-
-func _configure_button_theme() -> void:
-	_ensure_transparent_icon()
-	add_theme_icon_override(&"arrow", _transparent_icon)
-	add_theme_constant_override(&"h_separation", 0)
-	add_theme_constant_override(&"arrow_margin", 0)
-
-
-func _configure_popup() -> void:
-	var popup := get_popup()
-	popup.hide_on_item_selection = true
-	popup.hide_on_checkable_item_selection = true
-	popup.allow_search = false
-	popup.prefer_native_menu = false
-	popup.add_theme_icon_override(&"checked", _transparent_icon)
-	popup.add_theme_icon_override(&"unchecked", _transparent_icon)
-	popup.add_theme_icon_override(&"radio_checked", _transparent_icon)
-	popup.add_theme_icon_override(&"radio_unchecked", _transparent_icon)
-	popup.add_theme_constant_override(&"gutter_compact", 1)
-	popup.add_theme_constant_override(&"h_separation", 0)
-	popup.add_theme_constant_override(&"v_separation", 0)
-	popup.add_theme_constant_override(&"item_start_padding", 0)
-	popup.add_theme_constant_override(&"item_end_padding", 0)
-
-	if not popup.about_to_popup.is_connected(_on_popup_about_to_popup):
-		popup.about_to_popup.connect(_on_popup_about_to_popup)
-
-
-func _on_popup_about_to_popup() -> void:
-	_popup_was_positioned = false
-	set_process(true)
-	call_deferred("_position_popup")
-
-
-func _on_pressed() -> void:
-	button_pressed = true
-
-
-func _on_item_selected(index: int) -> void:
-	if index < 0 or index >= options.size():
-		return
-
-	_apply_selected_item(index)
-	button_pressed = true
-
-
-func _apply_selected_item(index: int) -> void:
-	var item: FlyoutButtonItem = options[index]
 	icon = _resolve_icon(item)
 	text = "" if icon != null else String(item.title)
 	tooltip_text = item.tooltip
+	_refresh_popup_button_states()
+
+
+func _build_popup() -> void:
+	_free_popup()
+
+	_popup = PopupPanel.new()
+	_popup.name = "%sPopup" % name
+	_popup.wrap_controls = true
+	_popup.exclusive = false
+	_popup.transient = true
+	_popup.unresizable = true
+	_popup.borderless = true
+	get_tree().root.add_child(_popup)
+
+	_rebuild_popup_items()
+
+
+func _rebuild_popup_items() -> void:
+	if _popup == null:
+		return
+
+	for child in _popup.get_children():
+		child.queue_free()
+	_popup_buttons.clear()
+
+	if content_direction == ContentDirection.HORIZONTAL:
+		_content = HBoxContainer.new()
+	else:
+		_content = VBoxContainer.new()
+
+	_content.name = "Content"
+	_content.add_theme_constant_override(&"separation", 0)
+	_popup.add_child(_content)
+
+	for index in range(options.size()):
+		var item_button := _make_item_button(index)
+		_content.add_child(item_button)
+		_popup_buttons.append(item_button)
+
+	_refresh_popup_button_states()
+
+
+func _make_item_button(index: int) -> Button:
+	var item := options[index]
+	var item_button := Button.new()
+	item_button.name = "Item%d" % index
+	item_button.flat = true
+	item_button.toggle_mode = true
+	item_button.focus_mode = Control.FOCUS_NONE
+	item_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	item_button.tooltip_text = item.tooltip
+	item_button.icon = _resolve_icon(item)
+	item_button.text = "" if item_button.icon != null else String(item.title)
+	item_button.shortcut = item.shortcut
+	item_button.shortcut_in_tooltip = true
+	item_button.pressed.connect(select_index.bind(index))
+	return item_button
+
+
+func _refresh_popup_button_states() -> void:
+	for index in range(_popup_buttons.size()):
+		_popup_buttons[index].set_pressed_no_signal(index == selected_index)
 
 
 func _position_popup() -> void:
-	var popup := get_popup()
-	if not popup.visible:
+	if not is_instance_valid(_popup):
 		return
 
-	var direction := _choose_direction()
+	var popup_size := Vector2(_popup.size)
+	if popup_size.x <= 0.0 or popup_size.y <= 0.0:
+		popup_size = Vector2(_popup.get_contents_minimum_size())
+
 	var button_rect := get_global_rect()
 	var viewport_rect := get_viewport_rect()
-	var popup_size := Vector2(popup.size)
-	if popup_size.x <= 0.0 or popup_size.y <= 0.0:
-		popup_size = Vector2(popup.get_contents_minimum_size())
-
+	var direction := _choose_direction(button_rect, popup_size)
 	var popup_position := button_rect.position
+
 	match direction:
 		PopupDirection.RIGHT:
 			popup_position.x = button_rect.end.x
@@ -201,27 +238,20 @@ func _position_popup() -> void:
 
 	popup_position.x = clamp(popup_position.x, 0.0, max(0.0, viewport_rect.size.x - popup_size.x))
 	popup_position.y = clamp(popup_position.y, 0.0, max(0.0, viewport_rect.size.y - popup_size.y))
-	popup.position = Vector2i(popup_position.round())
-	_popup_was_positioned = true
+	_popup.position = Vector2i(popup_position.round())
+	_popup.size = Vector2i(popup_size.ceil())
 
 
-func _choose_direction() -> int:
-	var preferred := popup_direction
-	var popup := get_popup()
-	var button_rect := get_global_rect()
-	var popup_size := Vector2(popup.size)
-	if popup_size.x <= 0.0 or popup_size.y <= 0.0:
-		popup_size = Vector2(popup.get_contents_minimum_size())
+func _choose_direction(button_rect: Rect2, popup_size: Vector2) -> int:
+	if _direction_fits(popup_direction, button_rect, popup_size):
+		return popup_direction
 
-	if _direction_fits(preferred, button_rect, popup_size):
-		return preferred
-
-	var fallbacks := _fallback_directions(preferred)
+	var fallbacks := _fallback_directions(popup_direction)
 	for fallback in fallbacks:
 		if _direction_fits(fallback, button_rect, popup_size):
 			return fallback
 
-	return fallbacks[0] if not fallbacks.is_empty() else preferred
+	return fallbacks[0] if not fallbacks.is_empty() else popup_direction
 
 
 func _fallback_directions(preferred: int) -> Array[int]:
@@ -284,10 +314,9 @@ func _get_editor_icon(icon_name: StringName) -> Texture2D:
 	return null
 
 
-func _ensure_transparent_icon() -> void:
-	if _transparent_icon != null:
-		return
-
-	var image := Image.create(1, 1, false, Image.FORMAT_RGBA8)
-	image.fill(Color(0, 0, 0, 0))
-	_transparent_icon = ImageTexture.create_from_image(image)
+func _free_popup() -> void:
+	if is_instance_valid(_popup):
+		_popup.queue_free()
+	_popup = null
+	_content = null
+	_popup_buttons.clear()

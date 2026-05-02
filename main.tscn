@@ -682,13 +682,13 @@ editor_icon = &"Rectangle"
 tooltip = "Editor Rectangle (Ctrl+Shift+E)"
 shortcut = SubResource("Shortcut_rpys8")
 
-[node name="FlyoutButtonDemo" type="Control" unique_id=1130266208]
+[node name="FlyoutButtonDemo" type="Control" unique_id=1246487822]
 layout_mode = 3
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TopTools" type="HBoxContainer" parent="." unique_id=843813048]
+[node name="TopTools" type="HBoxContainer" parent="." unique_id=260766784]
 layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
@@ -698,47 +698,41 @@ offset_right = 54.0
 offset_bottom = 40.0
 theme_override_constants/separation = 0
 
-[node name="Shape" type="OptionButton" parent="TopTools" unique_id=1037472244]
+[node name="Shape" type="Button" parent="TopTools" unique_id=1324016834]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_4c57u")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ycdy4"), SubResource("Resource_2cqfq"), SubResource("Resource_cegan"), SubResource("Resource_ryguw")])
 
-[node name="Fill" type="OptionButton" parent="TopTools" unique_id=250510180]
+[node name="Fill" type="Button" parent="TopTools" unique_id=1388562882]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_4c57u")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_0odxb"), SubResource("Resource_xuqvo"), SubResource("Resource_seu75"), SubResource("Resource_4k2k6")])
 
-[node name="Editor" type="OptionButton" parent="TopTools" unique_id=1479366319]
+[node name="Editor" type="Button" parent="TopTools" unique_id=915563156]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_4c57u")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_facbu"), SubResource("Resource_h8e4i"), SubResource("Resource_d2t1y"), SubResource("Resource_qnost")])
 
-[node name="BottomTools" type="HBoxContainer" parent="." unique_id=1089586854]
+[node name="BottomTools" type="HBoxContainer" parent="." unique_id=195381803]
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
@@ -750,47 +744,41 @@ offset_right = 54.0
 offset_bottom = -8.0
 theme_override_constants/separation = 0
 
-[node name="Shape" type="OptionButton" parent="BottomTools" unique_id=625992542]
+[node name="Shape" type="Button" parent="BottomTools" unique_id=170856792]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_wnkbs")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_hrvbo"), SubResource("Resource_abqjc"), SubResource("Resource_e71vb"), SubResource("Resource_uit24")])
 
-[node name="Fill" type="OptionButton" parent="BottomTools" unique_id=420608296]
+[node name="Fill" type="Button" parent="BottomTools" unique_id=844946378]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_wnkbs")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjyto"), SubResource("Resource_ntx8l"), SubResource("Resource_1vm84"), SubResource("Resource_0dhbp")])
 
-[node name="Editor" type="OptionButton" parent="BottomTools" unique_id=1002619371]
+[node name="Editor" type="Button" parent="BottomTools" unique_id=857807246]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_wnkbs")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_34ol3"), SubResource("Resource_gx4rg"), SubResource("Resource_birbe"), SubResource("Resource_ovcoh")])
 
-[node name="LeftTools" type="VBoxContainer" parent="." unique_id=934647445]
+[node name="LeftTools" type="VBoxContainer" parent="." unique_id=319926678]
 layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -800,50 +788,47 @@ offset_right = 40.0
 offset_bottom = 54.0
 theme_override_constants/separation = 0
 
-[node name="Shape" type="OptionButton" parent="LeftTools" unique_id=660024948]
+[node name="Shape" type="Button" parent="LeftTools" unique_id=1724143425]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_ppx11")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjuso"), SubResource("Resource_yysqy"), SubResource("Resource_53bls"), SubResource("Resource_jbvwl")])
 
-[node name="Fill" type="OptionButton" parent="LeftTools" unique_id=1888816496]
+[node name="Fill" type="Button" parent="LeftTools" unique_id=1766242921]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_ppx11")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_vieuh"), SubResource("Resource_inymm"), SubResource("Resource_dij0e"), SubResource("Resource_ywjan")])
 
-[node name="Editor" type="OptionButton" parent="LeftTools" unique_id=2037689454]
+[node name="Editor" type="Button" parent="LeftTools" unique_id=1052003120]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_ppx11")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_am8a1"), SubResource("Resource_smeu8"), SubResource("Resource_u81y6"), SubResource("Resource_vjgyh")])
 
-[node name="RightTools" type="VBoxContainer" parent="." unique_id=1983388637]
+[node name="RightTools" type="VBoxContainer" parent="." unique_id=1699612820]
 layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
@@ -855,45 +840,42 @@ offset_right = -8.0
 offset_bottom = 54.0
 theme_override_constants/separation = 0
 
-[node name="Shape" type="OptionButton" parent="RightTools" unique_id=56594057]
+[node name="Shape" type="Button" parent="RightTools" unique_id=535009652]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_d5iia")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_off2o"), SubResource("Resource_g5xqc"), SubResource("Resource_3exxq"), SubResource("Resource_shlp4")])
 
-[node name="Fill" type="OptionButton" parent="RightTools" unique_id=1097746314]
+[node name="Fill" type="Button" parent="RightTools" unique_id=1973720545]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_d5iia")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ldnlw"), SubResource("Resource_oosfy"), SubResource("Resource_t5kpo"), SubResource("Resource_0wkqm")])
 
-[node name="Editor" type="OptionButton" parent="RightTools" unique_id=2020301491]
+[node name="Editor" type="Button" parent="RightTools" unique_id=315866343]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
+toggle_mode = true
 button_group = SubResource("ButtonGroup_d5iia")
 flat = true
-alignment = 1
-fit_to_longest_item = false
-allow_reselect = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
+content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ibca3"), SubResource("Resource_uo83y"), SubResource("Resource_ekl5k"), SubResource("Resource_6gr3f")])
