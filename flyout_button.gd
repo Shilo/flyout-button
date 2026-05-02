@@ -75,7 +75,7 @@ var _panel: PanelContainer
 var _strip: BoxContainer
 var _item_buttons: Array[Button] = []
 var _texture_cache: Dictionary = {}
-var _current_direction := FlyoutDirection.RIGHT
+var _current_direction: int = FlyoutDirection.RIGHT
 
 
 func _ready() -> void:
@@ -158,7 +158,10 @@ func open_flyout() -> void:
 	_popup_layer.add_child(_panel)
 
 	_current_direction = _choose_open_direction()
-	_strip = VBoxContainer.new() if _is_vertical_direction(_current_direction) else HBoxContainer.new()
+	if _is_vertical_direction(_current_direction):
+		_strip = VBoxContainer.new()
+	else:
+		_strip = HBoxContainer.new()
 	_strip.name = "IconStrip"
 	_strip.add_theme_constant_override("separation", 1)
 	_panel.add_child(_strip)
@@ -314,21 +317,21 @@ func _position_panel() -> void:
 	var button_rect := get_global_rect()
 	var panel_size := _panel.get_combined_minimum_size()
 	var viewport_rect := get_viewport_rect()
-	var position := button_rect.position
+	var popup_position := button_rect.position
 
 	match _current_direction:
 		FlyoutDirection.RIGHT:
-			position.x += button_rect.size.x + flyout_gap
+			popup_position.x += button_rect.size.x + flyout_gap
 		FlyoutDirection.LEFT:
-			position.x -= panel_size.x + flyout_gap
+			popup_position.x -= panel_size.x + flyout_gap
 		FlyoutDirection.DOWN:
-			position.y += button_rect.size.y + flyout_gap
+			popup_position.y += button_rect.size.y + flyout_gap
 		FlyoutDirection.UP:
-			position.y -= panel_size.y + flyout_gap
+			popup_position.y -= panel_size.y + flyout_gap
 
-	position.x = clamp(position.x, 0.0, max(0.0, viewport_rect.size.x - panel_size.x))
-	position.y = clamp(position.y, 0.0, max(0.0, viewport_rect.size.y - panel_size.y))
-	_panel.position = position.round()
+	popup_position.x = clamp(popup_position.x, 0.0, max(0.0, viewport_rect.size.x - panel_size.x))
+	popup_position.y = clamp(popup_position.y, 0.0, max(0.0, viewport_rect.size.y - panel_size.y))
+	_panel.position = popup_position.round()
 	_panel.size = panel_size
 
 
@@ -510,7 +513,7 @@ func _generated_fallback_texture(item: Dictionary, index: int) -> Texture2D:
 
 
 func _draw_rect_icon(image: Image, color: Color, filled: bool) -> void:
-	var min_xy: int = max(1, int(icon_side / 8))
+	var min_xy: int = max(1, int(float(icon_side) / 8.0))
 	var max_xy: int = icon_side - min_xy - 1
 	for y in range(min_xy, max_xy + 1):
 		for x in range(min_xy, max_xy + 1):
