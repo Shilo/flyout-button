@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dnmdvjqwkmr57"]
 
-[ext_resource type="Script" path="res://flyout_button.gd" id="1_lquwl"]
-[ext_resource type="Script" path="res://flyout_button_item.gd" id="2_7mycd"]
-[ext_resource type="Texture2D" path="res://icons/RectangleFilled.svg" id="3_272bh"]
-[ext_resource type="Texture2D" path="res://icons/Ellipse.svg" id="4_5vw27"]
-[ext_resource type="Texture2D" path="res://icons/EllipseFilled.svg" id="5_kek77"]
+[ext_resource type="Script" uid="uid://c7hbyexi83ha6" path="res://flyout_button.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dg12678wjk1m3" path="res://flyout_button_item.gd" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ypqyaiosux1n" path="res://icons/RectangleFilled.svg" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://5hjp6yccxqb4" path="res://icons/Ellipse.svg" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dn47fjk6qduep" path="res://icons/EllipseFilled.svg" id="5_kek77"]
+[ext_resource type="Texture2D" uid="uid://bh2mgirh3k4mc" path="res://icons/Rectangle.svg" id="6_7mycd"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_4c57u"]
 resource_name = "TopToolsButtonGroup"
@@ -59,8 +60,8 @@ events = [SubResource("InputEventKey_82xsv")]
 
 [sub_resource type="Resource" id="Resource_ryguw"]
 script = ExtResource("2_7mycd")
-title = &"editor_rectangle"
-editor_icon = &"Rectangle"
+title = &"rectangle"
+icon = ExtResource("6_7mycd")
 tooltip = "Editor Rectangle (Alt+Q)"
 shortcut = SubResource("Shortcut_getpj")
 
@@ -684,7 +685,7 @@ shortcut = SubResource("Shortcut_rpys8")
 
 [node name="FlyoutButtonDemo" type="Control" unique_id=1246487822]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -701,11 +702,13 @@ theme_override_constants/separation = 0
 [node name="Shape" type="Button" parent="TopTools" unique_id=1324016834]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Rectangle Filled (Q)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_4c57u")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ycdy4"), SubResource("Resource_2cqfq"), SubResource("Resource_cegan"), SubResource("Resource_ryguw")])
@@ -713,10 +716,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ycdy4"), SubResou
 [node name="Fill" type="Button" parent="TopTools" unique_id=1388562882]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Fill Rectangle (W)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_4c57u")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_0odxb"), SubResource("Resource_xuqvo"), SubResource("Resource_seu75"), SubResource("Resource_4k2k6")])
@@ -724,10 +729,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_0odxb"), SubResou
 [node name="Editor" type="Button" parent="TopTools" unique_id=915563156]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "SVG Rectangle (E)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_4c57u")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_facbu"), SubResource("Resource_h8e4i"), SubResource("Resource_d2t1y"), SubResource("Resource_qnost")])
@@ -747,11 +754,13 @@ theme_override_constants/separation = 0
 [node name="Shape" type="Button" parent="BottomTools" unique_id=170856792]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Rectangle Filled (Z)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_wnkbs")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_hrvbo"), SubResource("Resource_abqjc"), SubResource("Resource_e71vb"), SubResource("Resource_uit24")])
@@ -759,10 +768,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_hrvbo"), SubResou
 [node name="Fill" type="Button" parent="BottomTools" unique_id=844946378]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Fill Rectangle (X)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_wnkbs")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjyto"), SubResource("Resource_ntx8l"), SubResource("Resource_1vm84"), SubResource("Resource_0dhbp")])
@@ -770,10 +781,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjyto"), SubResou
 [node name="Editor" type="Button" parent="BottomTools" unique_id=857807246]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "SVG Rectangle (C)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_wnkbs")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_34ol3"), SubResource("Resource_gx4rg"), SubResource("Resource_birbe"), SubResource("Resource_ovcoh")])
@@ -791,11 +804,13 @@ theme_override_constants/separation = 0
 [node name="Shape" type="Button" parent="LeftTools" unique_id=1724143425]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Rectangle Filled (A)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_ppx11")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
@@ -805,10 +820,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjuso"), SubResou
 [node name="Fill" type="Button" parent="LeftTools" unique_id=1766242921]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Fill Rectangle (S)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_ppx11")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
@@ -818,10 +835,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_vieuh"), SubResou
 [node name="Editor" type="Button" parent="LeftTools" unique_id=1052003120]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "SVG Rectangle (D)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_ppx11")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 1
@@ -843,11 +862,13 @@ theme_override_constants/separation = 0
 [node name="Shape" type="Button" parent="RightTools" unique_id=535009652]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Rectangle Filled (Q)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_d5iia")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
@@ -857,10 +878,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_off2o"), SubResou
 [node name="Fill" type="Button" parent="RightTools" unique_id=1973720545]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Fill Rectangle (W)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_d5iia")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
@@ -870,10 +893,12 @@ options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ldnlw"), SubResou
 [node name="Editor" type="Button" parent="RightTools" unique_id=315866343]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "SVG Rectangle (E)"
 focus_mode = 0
 mouse_default_cursor_shape = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_d5iia")
+icon = ExtResource("3_272bh")
 flat = true
 script = ExtResource("1_lquwl")
 popup_direction = 0
