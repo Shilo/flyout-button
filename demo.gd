@@ -92,21 +92,25 @@ func _shape_items() -> Array[FlyoutButtonItem]:
 		_make_item(&"rectangle_filled", ICON_RECTANGLE_FILLED, "Rectangle Filled"),
 		_make_item(&"ellipse_outline", ICON_ELLIPSE, "Ellipse Outline"),
 		_make_item(&"ellipse_filled", ICON_ELLIPSE_FILLED, "Ellipse Filled"),
+		_make_editor_icon_only_item(&"editor_rectangle", &"Rectangle", "Editor Rectangle"),
 	]
 
 
 func _fill_items() -> Array[FlyoutButtonItem]:
 	return [
 		_make_item(&"fill_rectangle", ICON_RECTANGLE_FILLED, "Fill Rectangle"),
+		_make_item(&"fill_ellipse_outline", ICON_ELLIPSE, "Fill Ellipse Outline"),
 		_make_item(&"fill_ellipse", ICON_ELLIPSE_FILLED, "Fill Ellipse"),
+		_make_editor_icon_only_item(&"fill_editor_rectangle", &"Rectangle", "Editor Rectangle"),
 	]
 
 
 func _editor_items() -> Array[FlyoutButtonItem]:
 	return [
-		_make_editor_item(&"editor_select", &"ToolSelect", "Editor Select"),
-		_make_editor_item(&"editor_move", &"Move", "Editor Move"),
-		_make_editor_item(&"editor_anchor", &"Anchor", "Editor Anchor"),
+		_make_item(&"editor_svg_rectangle", ICON_RECTANGLE_FILLED, "SVG Rectangle"),
+		_make_item(&"editor_svg_ellipse_outline", ICON_ELLIPSE, "SVG Ellipse Outline"),
+		_make_item(&"editor_svg_ellipse_filled", ICON_ELLIPSE_FILLED, "SVG Ellipse Filled"),
+		_make_editor_icon_only_item(&"editor_icon_rectangle", &"Rectangle", "Editor Rectangle"),
 	]
 
 
@@ -118,10 +122,9 @@ func _make_item(state: StringName, texture: Texture2D, tooltip: String) -> Flyou
 	return item
 
 
-func _make_editor_item(state: StringName, editor_icon: StringName, tooltip: String) -> FlyoutButtonItem:
+func _make_editor_icon_only_item(state: StringName, editor_icon: StringName, tooltip: String) -> FlyoutButtonItem:
 	var item: FlyoutButtonItem = FlyoutButtonItem.new()
 	item.state = state
 	item.editor_icon = editor_icon
 	item.tooltip = tooltip
-	item.icon = ICON_RECTANGLE_FILLED if state == &"editor_select" else ICON_ELLIPSE
 	return item
