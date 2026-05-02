@@ -7,3 +7,4 @@ class_name FlyoutButtonItem
 @export var editor_icon: StringName
 @export var tooltip := ""
 @export var shortcut: Shortcut
+@export var shortcut_in_tooltip := true

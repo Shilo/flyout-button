@@ -198,7 +198,7 @@ func _make_item_button(index: int) -> Button:
 	item_button.icon = _resolve_icon(item)
 	item_button.text = "" if item_button.icon != null else String(item.title)
 	item_button.shortcut = item.shortcut
-	item_button.shortcut_in_tooltip = true
+	item_button.shortcut_in_tooltip = item.shortcut_in_tooltip
 	item_button.pressed.connect(select_index.bind(index))
 	return item_button
 
@@ -232,9 +232,9 @@ func _position_popup() -> void:
 			popup_position.y = button_rect.end.y
 
 	if direction == PopupDirection.RIGHT or direction == PopupDirection.LEFT:
-		popup_position.y = button_rect.position.y
+		popup_position.y = button_rect.get_center().y - (popup_size.y * 0.5)
 	else:
-		popup_position.x = button_rect.position.x
+		popup_position.x = button_rect.get_center().x - (popup_size.x * 0.5)
 
 	popup_position.x = clamp(popup_position.x, 0.0, max(0.0, viewport_rect.size.x - popup_size.x))
 	popup_position.y = clamp(popup_position.y, 0.0, max(0.0, viewport_rect.size.y - popup_size.y))

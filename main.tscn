@@ -22,6 +22,7 @@ title = &"rectangle_filled"
 icon = ExtResource("3_272bh")
 tooltip = "Rectangle Filled (Q)"
 shortcut = SubResource("Shortcut_dg77c")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_w48qg"]
 shift_pressed = true
@@ -36,6 +37,7 @@ title = &"ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Ellipse Outline (Shift+Q)"
 shortcut = SubResource("Shortcut_vivmo")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_yaehf"]
 ctrl_pressed = true
@@ -50,6 +52,7 @@ title = &"ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "Ellipse Filled (Ctrl+Q)"
 shortcut = SubResource("Shortcut_074og")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_82xsv"]
 alt_pressed = true
@@ -60,10 +63,11 @@ events = [SubResource("InputEventKey_82xsv")]
 
 [sub_resource type="Resource" id="Resource_ryguw"]
 script = ExtResource("2_7mycd")
-title = &"rectangle"
+title = &"rectangle_outline"
 icon = ExtResource("6_7mycd")
-tooltip = "Editor Rectangle (Alt+Q)"
+tooltip = "Rectangle Outline (Alt+Q)"
 shortcut = SubResource("Shortcut_getpj")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_d13ii"]
 keycode = 87
@@ -77,6 +81,7 @@ title = &"fill_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "Fill Rectangle (W)"
 shortcut = SubResource("Shortcut_1u8w0")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_lswn8"]
 shift_pressed = true
@@ -91,6 +96,7 @@ title = &"fill_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Fill Ellipse Outline (Shift+W)"
 shortcut = SubResource("Shortcut_a6jrf")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_qsp4k"]
 ctrl_pressed = true
@@ -105,6 +111,7 @@ title = &"fill_ellipse"
 icon = ExtResource("5_kek77")
 tooltip = "Fill Ellipse (Ctrl+W)"
 shortcut = SubResource("Shortcut_kq58d")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_htxhm"]
 alt_pressed = true
@@ -115,10 +122,11 @@ events = [SubResource("InputEventKey_htxhm")]
 
 [sub_resource type="Resource" id="Resource_4k2k6"]
 script = ExtResource("2_7mycd")
-title = &"fill_editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+W)"
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+W)"
 shortcut = SubResource("Shortcut_jq2sk")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_0rl1p"]
 keycode = 69
@@ -132,6 +140,7 @@ title = &"editor_svg_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "SVG Rectangle (E)"
 shortcut = SubResource("Shortcut_ok6jj")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_b1qrp"]
 shift_pressed = true
@@ -146,6 +155,7 @@ title = &"editor_svg_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "SVG Ellipse Outline (Shift+E)"
 shortcut = SubResource("Shortcut_come4")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_4lmeg"]
 ctrl_pressed = true
@@ -160,6 +170,7 @@ title = &"editor_svg_ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "SVG Ellipse Filled (Ctrl+E)"
 shortcut = SubResource("Shortcut_0cp0l")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_gngh3"]
 shift_pressed = true
@@ -171,10 +182,11 @@ events = [SubResource("InputEventKey_gngh3")]
 
 [sub_resource type="Resource" id="Resource_qnost"]
 script = ExtResource("2_7mycd")
-title = &"editor_icon_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Ctrl+Shift+E)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Ctrl+Shift+E)"
 shortcut = SubResource("Shortcut_0n3wm")
+shortcut_in_tooltip = null
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_wnkbs"]
 resource_name = "BottomToolsButtonGroup"
@@ -205,6 +217,7 @@ title = &"ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Ellipse Outline (Shift+Z)"
 shortcut = SubResource("Shortcut_blkrb")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_6iyjs"]
 ctrl_pressed = true
@@ -219,6 +232,7 @@ title = &"ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "Ellipse Filled (Ctrl+Z)"
 shortcut = SubResource("Shortcut_4w656")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_rnkwl"]
 alt_pressed = true
@@ -229,10 +243,11 @@ events = [SubResource("InputEventKey_rnkwl")]
 
 [sub_resource type="Resource" id="Resource_uit24"]
 script = ExtResource("2_7mycd")
-title = &"editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+Z)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+Z)"
 shortcut = SubResource("Shortcut_vke2r")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_ruth0"]
 keycode = 88
@@ -246,6 +261,7 @@ title = &"fill_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "Fill Rectangle (X)"
 shortcut = SubResource("Shortcut_rm4vd")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_sm6fg"]
 shift_pressed = true
@@ -260,6 +276,7 @@ title = &"fill_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Fill Ellipse Outline (Shift+X)"
 shortcut = SubResource("Shortcut_b17eg")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_uatky"]
 ctrl_pressed = true
@@ -274,6 +291,7 @@ title = &"fill_ellipse"
 icon = ExtResource("5_kek77")
 tooltip = "Fill Ellipse (Ctrl+X)"
 shortcut = SubResource("Shortcut_rqtf5")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_wu3dr"]
 alt_pressed = true
@@ -284,10 +302,11 @@ events = [SubResource("InputEventKey_wu3dr")]
 
 [sub_resource type="Resource" id="Resource_0dhbp"]
 script = ExtResource("2_7mycd")
-title = &"fill_editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+X)"
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+X)"
 shortcut = SubResource("Shortcut_cyx1q")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_jx0wj"]
 keycode = 67
@@ -301,6 +320,7 @@ title = &"editor_svg_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "SVG Rectangle (C)"
 shortcut = SubResource("Shortcut_kkkcx")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_c2n8d"]
 shift_pressed = true
@@ -315,6 +335,7 @@ title = &"editor_svg_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "SVG Ellipse Outline (Shift+C)"
 shortcut = SubResource("Shortcut_wy5fy")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_5dllo"]
 ctrl_pressed = true
@@ -329,6 +350,7 @@ title = &"editor_svg_ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "SVG Ellipse Filled (Ctrl+C)"
 shortcut = SubResource("Shortcut_phcyf")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_f1p13"]
 shift_pressed = true
@@ -340,10 +362,11 @@ events = [SubResource("InputEventKey_f1p13")]
 
 [sub_resource type="Resource" id="Resource_ovcoh"]
 script = ExtResource("2_7mycd")
-title = &"editor_icon_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Ctrl+Shift+C)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Ctrl+Shift+C)"
 shortcut = SubResource("Shortcut_4obbf")
+shortcut_in_tooltip = null
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ppx11"]
 resource_name = "LeftToolsButtonGroup"
@@ -360,6 +383,7 @@ title = &"rectangle_filled"
 icon = ExtResource("3_272bh")
 tooltip = "Rectangle Filled (A)"
 shortcut = SubResource("Shortcut_5yh34")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_23xmf"]
 shift_pressed = true
@@ -374,6 +398,7 @@ title = &"ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Ellipse Outline (Shift+A)"
 shortcut = SubResource("Shortcut_swlj1")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_n5t1e"]
 ctrl_pressed = true
@@ -388,6 +413,7 @@ title = &"ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "Ellipse Filled (Ctrl+A)"
 shortcut = SubResource("Shortcut_h6isl")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_lwnsi"]
 alt_pressed = true
@@ -398,10 +424,11 @@ events = [SubResource("InputEventKey_lwnsi")]
 
 [sub_resource type="Resource" id="Resource_jbvwl"]
 script = ExtResource("2_7mycd")
-title = &"editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+A)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+A)"
 shortcut = SubResource("Shortcut_41lik")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_sn1fb"]
 keycode = 83
@@ -415,6 +442,7 @@ title = &"fill_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "Fill Rectangle (S)"
 shortcut = SubResource("Shortcut_yvsr8")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_yjja3"]
 shift_pressed = true
@@ -429,6 +457,7 @@ title = &"fill_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Fill Ellipse Outline (Shift+S)"
 shortcut = SubResource("Shortcut_l0gw7")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_jcxqu"]
 ctrl_pressed = true
@@ -443,6 +472,7 @@ title = &"fill_ellipse"
 icon = ExtResource("5_kek77")
 tooltip = "Fill Ellipse (Ctrl+S)"
 shortcut = SubResource("Shortcut_0arob")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_k1udn"]
 alt_pressed = true
@@ -453,10 +483,11 @@ events = [SubResource("InputEventKey_k1udn")]
 
 [sub_resource type="Resource" id="Resource_ywjan"]
 script = ExtResource("2_7mycd")
-title = &"fill_editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+S)"
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+S)"
 shortcut = SubResource("Shortcut_wat4s")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_m74q3"]
 keycode = 68
@@ -470,6 +501,7 @@ title = &"editor_svg_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "SVG Rectangle (D)"
 shortcut = SubResource("Shortcut_tko6h")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_8dc3g"]
 shift_pressed = true
@@ -484,6 +516,7 @@ title = &"editor_svg_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "SVG Ellipse Outline (Shift+D)"
 shortcut = SubResource("Shortcut_htgcl")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_f3y11"]
 ctrl_pressed = true
@@ -498,6 +531,7 @@ title = &"editor_svg_ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "SVG Ellipse Filled (Ctrl+D)"
 shortcut = SubResource("Shortcut_cpm2s")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_rt5wr"]
 shift_pressed = true
@@ -509,10 +543,11 @@ events = [SubResource("InputEventKey_rt5wr")]
 
 [sub_resource type="Resource" id="Resource_vjgyh"]
 script = ExtResource("2_7mycd")
-title = &"editor_icon_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Ctrl+Shift+D)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Ctrl+Shift+D)"
 shortcut = SubResource("Shortcut_mnw77")
+shortcut_in_tooltip = null
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_d5iia"]
 resource_name = "RightToolsButtonGroup"
@@ -529,6 +564,7 @@ title = &"rectangle_filled"
 icon = ExtResource("3_272bh")
 tooltip = "Rectangle Filled (Q)"
 shortcut = SubResource("Shortcut_qwt6e")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_tttfs"]
 shift_pressed = true
@@ -543,6 +579,7 @@ title = &"ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Ellipse Outline (Shift+Q)"
 shortcut = SubResource("Shortcut_1iygd")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_s4o1y"]
 ctrl_pressed = true
@@ -557,6 +594,7 @@ title = &"ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "Ellipse Filled (Ctrl+Q)"
 shortcut = SubResource("Shortcut_7mmqq")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_5aa3q"]
 alt_pressed = true
@@ -567,10 +605,11 @@ events = [SubResource("InputEventKey_5aa3q")]
 
 [sub_resource type="Resource" id="Resource_shlp4"]
 script = ExtResource("2_7mycd")
-title = &"editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+Q)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+Q)"
 shortcut = SubResource("Shortcut_bmvma")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_2n44k"]
 keycode = 87
@@ -584,6 +623,7 @@ title = &"fill_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "Fill Rectangle (W)"
 shortcut = SubResource("Shortcut_86lig")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_qe8ju"]
 shift_pressed = true
@@ -598,6 +638,7 @@ title = &"fill_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "Fill Ellipse Outline (Shift+W)"
 shortcut = SubResource("Shortcut_bnk2o")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_nf4f2"]
 ctrl_pressed = true
@@ -612,6 +653,7 @@ title = &"fill_ellipse"
 icon = ExtResource("5_kek77")
 tooltip = "Fill Ellipse (Ctrl+W)"
 shortcut = SubResource("Shortcut_xkvoa")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_pw0td"]
 alt_pressed = true
@@ -622,10 +664,11 @@ events = [SubResource("InputEventKey_pw0td")]
 
 [sub_resource type="Resource" id="Resource_0wkqm"]
 script = ExtResource("2_7mycd")
-title = &"fill_editor_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Alt+W)"
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Alt+W)"
 shortcut = SubResource("Shortcut_37eu1")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_ve5sr"]
 keycode = 69
@@ -639,6 +682,7 @@ title = &"editor_svg_rectangle"
 icon = ExtResource("3_272bh")
 tooltip = "SVG Rectangle (E)"
 shortcut = SubResource("Shortcut_5s44m")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_g3y5b"]
 shift_pressed = true
@@ -653,6 +697,7 @@ title = &"editor_svg_ellipse_outline"
 icon = ExtResource("4_5vw27")
 tooltip = "SVG Ellipse Outline (Shift+E)"
 shortcut = SubResource("Shortcut_1slqb")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_y0aao"]
 ctrl_pressed = true
@@ -667,6 +712,7 @@ title = &"editor_svg_ellipse_filled"
 icon = ExtResource("5_kek77")
 tooltip = "SVG Ellipse Filled (Ctrl+E)"
 shortcut = SubResource("Shortcut_wm5rm")
+shortcut_in_tooltip = null
 
 [sub_resource type="InputEventKey" id="InputEventKey_fdpg8"]
 shift_pressed = true
@@ -678,29 +724,33 @@ events = [SubResource("InputEventKey_fdpg8")]
 
 [sub_resource type="Resource" id="Resource_6gr3f"]
 script = ExtResource("2_7mycd")
-title = &"editor_icon_rectangle"
-editor_icon = &"Rectangle"
-tooltip = "Editor Rectangle (Ctrl+Shift+E)"
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline (Ctrl+Shift+E)"
 shortcut = SubResource("Shortcut_rpys8")
+shortcut_in_tooltip = null
 
 [node name="FlyoutButtonDemo" type="Control" unique_id=1246487822]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TopTools" type="HBoxContainer" parent="." unique_id=260766784]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -54.0
-offset_top = 8.0
-offset_right = 54.0
+offset_left = -36.0
+offset_top = 16.0
+offset_right = 36.0
 offset_bottom = 40.0
+grow_horizontal = 2
 theme_override_constants/separation = 0
 
 [node name="Shape" type="Button" parent="TopTools" unique_id=1324016834]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Rectangle Filled (Q)"
 focus_mode = 0
@@ -714,7 +764,6 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ycdy4"), SubResource("Resource_2cqfq"), SubResource("Resource_cegan"), SubResource("Resource_ryguw")])
 
 [node name="Fill" type="Button" parent="TopTools" unique_id=1388562882]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Fill Rectangle (W)"
 focus_mode = 0
@@ -727,7 +776,6 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_0odxb"), SubResource("Resource_xuqvo"), SubResource("Resource_seu75"), SubResource("Resource_4k2k6")])
 
 [node name="Editor" type="Button" parent="TopTools" unique_id=915563156]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "SVG Rectangle (E)"
 focus_mode = 0
@@ -740,19 +788,21 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_facbu"), SubResource("Resource_h8e4i"), SubResource("Resource_d2t1y"), SubResource("Resource_qnost")])
 
 [node name="BottomTools" type="HBoxContainer" parent="." unique_id=195381803]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -54.0
+offset_left = -36.0
 offset_top = -40.0
-offset_right = 54.0
-offset_bottom = -8.0
+offset_right = 36.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_constants/separation = 0
 
 [node name="Shape" type="Button" parent="BottomTools" unique_id=170856792]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Rectangle Filled (Z)"
 focus_mode = 0
@@ -766,7 +816,6 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_hrvbo"), SubResource("Resource_abqjc"), SubResource("Resource_e71vb"), SubResource("Resource_uit24")])
 
 [node name="Fill" type="Button" parent="BottomTools" unique_id=844946378]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Fill Rectangle (X)"
 focus_mode = 0
@@ -779,7 +828,6 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjyto"), SubResource("Resource_ntx8l"), SubResource("Resource_1vm84"), SubResource("Resource_0dhbp")])
 
 [node name="Editor" type="Button" parent="BottomTools" unique_id=857807246]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "SVG Rectangle (C)"
 focus_mode = 0
@@ -792,17 +840,18 @@ script = ExtResource("1_lquwl")
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_34ol3"), SubResource("Resource_gx4rg"), SubResource("Resource_birbe"), SubResource("Resource_ovcoh")])
 
 [node name="LeftTools" type="VBoxContainer" parent="." unique_id=319926678]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -54.0
+offset_left = 16.0
+offset_top = -36.0
 offset_right = 40.0
-offset_bottom = 54.0
+offset_bottom = 36.0
+grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Shape" type="Button" parent="LeftTools" unique_id=1724143425]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Rectangle Filled (A)"
 focus_mode = 0
@@ -818,7 +867,6 @@ content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjuso"), SubResource("Resource_yysqy"), SubResource("Resource_53bls"), SubResource("Resource_jbvwl")])
 
 [node name="Fill" type="Button" parent="LeftTools" unique_id=1766242921]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Fill Rectangle (S)"
 focus_mode = 0
@@ -833,7 +881,6 @@ content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_vieuh"), SubResource("Resource_inymm"), SubResource("Resource_dij0e"), SubResource("Resource_ywjan")])
 
 [node name="Editor" type="Button" parent="LeftTools" unique_id=1052003120]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "SVG Rectangle (D)"
 focus_mode = 0
@@ -848,19 +895,21 @@ content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_am8a1"), SubResource("Resource_smeu8"), SubResource("Resource_u81y6"), SubResource("Resource_vjgyh")])
 
 [node name="RightTools" type="VBoxContainer" parent="." unique_id=1699612820]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -54.0
-offset_right = -8.0
-offset_bottom = 54.0
+offset_top = -36.0
+offset_right = -16.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Shape" type="Button" parent="RightTools" unique_id=535009652]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Rectangle Filled (Q)"
 focus_mode = 0
@@ -876,7 +925,6 @@ content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_off2o"), SubResource("Resource_g5xqc"), SubResource("Resource_3exxq"), SubResource("Resource_shlp4")])
 
 [node name="Fill" type="Button" parent="RightTools" unique_id=1973720545]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "Fill Rectangle (W)"
 focus_mode = 0
@@ -891,7 +939,6 @@ content_direction = 0
 options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ldnlw"), SubResource("Resource_oosfy"), SubResource("Resource_t5kpo"), SubResource("Resource_0wkqm")])
 
 [node name="Editor" type="Button" parent="RightTools" unique_id=315866343]
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 tooltip_text = "SVG Rectangle (E)"
 focus_mode = 0
