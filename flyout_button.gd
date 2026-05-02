@@ -138,11 +138,14 @@ func _refresh_selected() -> void:
 		icon = null
 		text = ""
 		tooltip_text = ""
+		shortcut = null
 		return
 
 	icon = _resolve_icon(item)
 	text = "" if icon != null else String(item.title)
 	tooltip_text = item.tooltip
+	shortcut = item.shortcut
+	shortcut_in_tooltip = _get_shortcut_in_tooltip(item)
 	_refresh_popup_button_states()
 
 
@@ -198,9 +201,14 @@ func _make_item_button(index: int) -> Button:
 	item_button.icon = _resolve_icon(item)
 	item_button.text = "" if item_button.icon != null else String(item.title)
 	item_button.shortcut = item.shortcut
-	item_button.shortcut_in_tooltip = item.shortcut_in_tooltip
+	item_button.shortcut_in_tooltip = _get_shortcut_in_tooltip(item)
 	item_button.pressed.connect(select_index.bind(index))
 	return item_button
+
+
+func _get_shortcut_in_tooltip(item: FlyoutButtonItem) -> bool:
+	var value = item.get(&"shortcut_in_tooltip")
+	return true if value == null else bool(value)
 
 
 func _refresh_popup_button_states() -> void:
