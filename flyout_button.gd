@@ -43,8 +43,12 @@ func _ready() -> void:
 	_rebuild_options()
 
 
-func _shortcut_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.echo:
+		return
+	if event is InputEventKey and not event.pressed:
+		return
+	if disabled or not is_visible_in_tree():
 		return
 
 	for index in range(options.size()):
@@ -52,7 +56,7 @@ func _shortcut_input(event: InputEvent) -> void:
 		if item != null and item.shortcut != null and item.shortcut.matches_event(event):
 			select(index)
 			_on_item_selected(index)
-			accept_event()
+			get_viewport().set_input_as_handled()
 			return
 
 
@@ -101,8 +105,6 @@ func _rebuild_options() -> void:
 		set_item_tooltip(index, item.tooltip)
 		popup.set_item_as_radio_checkable(index, false)
 		popup.set_item_as_checkable(index, false)
-		if item.shortcut != null:
-			popup.set_item_shortcut(index, item.shortcut)
 		if item_icon != null:
 			popup.set_item_icon_max_width(index, item_icon.get_width())
 
