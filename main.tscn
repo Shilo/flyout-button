@@ -1,0 +1,918 @@
+[gd_scene format=3 uid="uid://dnmdvjqwkmr57"]
+
+[ext_resource type="Script" uid="uid://c7hbyexi83ha6" path="res://addons/flyout_button/flyout_button.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dg12678wjk1m3" path="res://addons/flyout_button/flyout_button_item.gd" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ypqyaiosux1n" path="res://icons/RectangleFilled.svg" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://5hjp6yccxqb4" path="res://icons/Ellipse.svg" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dn47fjk6qduep" path="res://icons/EllipseFilled.svg" id="5_kek77"]
+[ext_resource type="Texture2D" uid="uid://bh2mgirh3k4mc" path="res://icons/Rectangle.svg" id="6_7mycd"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_4c57u"]
+resource_name = "TopToolsButtonGroup"
+
+[sub_resource type="InputEventKey" id="InputEventKey_efxa6"]
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_dg77c"]
+events = [SubResource("InputEventKey_efxa6")]
+
+[sub_resource type="Resource" id="Resource_ycdy4"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_filled"
+icon = ExtResource("3_272bh")
+tooltip = "Rectangle Filled"
+shortcut = SubResource("Shortcut_dg77c")
+
+[sub_resource type="InputEventKey" id="InputEventKey_w48qg"]
+shift_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_vivmo"]
+events = [SubResource("InputEventKey_w48qg")]
+
+[sub_resource type="Resource" id="Resource_2cqfq"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Ellipse Outline"
+shortcut = SubResource("Shortcut_vivmo")
+
+[sub_resource type="InputEventKey" id="InputEventKey_yaehf"]
+ctrl_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_074og"]
+events = [SubResource("InputEventKey_yaehf")]
+
+[sub_resource type="Resource" id="Resource_cegan"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "Ellipse Filled"
+shortcut = SubResource("Shortcut_074og")
+
+[sub_resource type="InputEventKey" id="InputEventKey_82xsv"]
+alt_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_getpj"]
+events = [SubResource("InputEventKey_82xsv")]
+
+[sub_resource type="Resource" id="Resource_ryguw"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_getpj")
+
+[sub_resource type="InputEventKey" id="InputEventKey_d13ii"]
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_1u8w0"]
+events = [SubResource("InputEventKey_d13ii")]
+
+[sub_resource type="Resource" id="Resource_0odxb"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "Fill Rectangle"
+shortcut = SubResource("Shortcut_1u8w0")
+
+[sub_resource type="InputEventKey" id="InputEventKey_lswn8"]
+shift_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_a6jrf"]
+events = [SubResource("InputEventKey_lswn8")]
+
+[sub_resource type="Resource" id="Resource_xuqvo"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Fill Ellipse Outline"
+shortcut = SubResource("Shortcut_a6jrf")
+
+[sub_resource type="InputEventKey" id="InputEventKey_qsp4k"]
+ctrl_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_kq58d"]
+events = [SubResource("InputEventKey_qsp4k")]
+
+[sub_resource type="Resource" id="Resource_seu75"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse"
+icon = ExtResource("5_kek77")
+tooltip = "Fill Ellipse"
+shortcut = SubResource("Shortcut_kq58d")
+
+[sub_resource type="InputEventKey" id="InputEventKey_htxhm"]
+alt_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_jq2sk"]
+events = [SubResource("InputEventKey_htxhm")]
+
+[sub_resource type="Resource" id="Resource_4k2k6"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_jq2sk")
+
+[sub_resource type="InputEventKey" id="InputEventKey_0rl1p"]
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_ok6jj"]
+events = [SubResource("InputEventKey_0rl1p")]
+
+[sub_resource type="Resource" id="Resource_facbu"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "SVG Rectangle"
+shortcut = SubResource("Shortcut_ok6jj")
+
+[sub_resource type="InputEventKey" id="InputEventKey_b1qrp"]
+shift_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_come4"]
+events = [SubResource("InputEventKey_b1qrp")]
+
+[sub_resource type="Resource" id="Resource_h8e4i"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "SVG Ellipse Outline"
+shortcut = SubResource("Shortcut_come4")
+
+[sub_resource type="InputEventKey" id="InputEventKey_4lmeg"]
+ctrl_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_0cp0l"]
+events = [SubResource("InputEventKey_4lmeg")]
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "SVG Ellipse Filled"
+shortcut = SubResource("Shortcut_0cp0l")
+
+[sub_resource type="InputEventKey" id="InputEventKey_gngh3"]
+shift_pressed = true
+ctrl_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_0n3wm"]
+events = [SubResource("InputEventKey_gngh3")]
+
+[sub_resource type="Resource" id="Resource_qnost"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_0n3wm")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_wnkbs"]
+resource_name = "BottomToolsButtonGroup"
+
+[sub_resource type="InputEventKey" id="InputEventKey_f6a44"]
+keycode = 90
+
+[sub_resource type="Shortcut" id="Shortcut_0cbny"]
+events = [SubResource("InputEventKey_f6a44")]
+
+[sub_resource type="Resource" id="Resource_hrvbo"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_filled"
+icon = ExtResource("3_272bh")
+tooltip = "Rectangle Filled"
+shortcut = SubResource("Shortcut_0cbny")
+
+[sub_resource type="InputEventKey" id="InputEventKey_uypp3"]
+shift_pressed = true
+keycode = 90
+
+[sub_resource type="Shortcut" id="Shortcut_blkrb"]
+events = [SubResource("InputEventKey_uypp3")]
+
+[sub_resource type="Resource" id="Resource_abqjc"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Ellipse Outline"
+shortcut = SubResource("Shortcut_blkrb")
+
+[sub_resource type="InputEventKey" id="InputEventKey_6iyjs"]
+ctrl_pressed = true
+keycode = 90
+
+[sub_resource type="Shortcut" id="Shortcut_4w656"]
+events = [SubResource("InputEventKey_6iyjs")]
+
+[sub_resource type="Resource" id="Resource_e71vb"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "Ellipse Filled"
+shortcut = SubResource("Shortcut_4w656")
+
+[sub_resource type="InputEventKey" id="InputEventKey_rnkwl"]
+alt_pressed = true
+keycode = 90
+
+[sub_resource type="Shortcut" id="Shortcut_vke2r"]
+events = [SubResource("InputEventKey_rnkwl")]
+
+[sub_resource type="Resource" id="Resource_uit24"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_vke2r")
+
+[sub_resource type="InputEventKey" id="InputEventKey_ruth0"]
+keycode = 88
+
+[sub_resource type="Shortcut" id="Shortcut_rm4vd"]
+events = [SubResource("InputEventKey_ruth0")]
+
+[sub_resource type="Resource" id="Resource_pjyto"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "Fill Rectangle"
+shortcut = SubResource("Shortcut_rm4vd")
+
+[sub_resource type="InputEventKey" id="InputEventKey_sm6fg"]
+shift_pressed = true
+keycode = 88
+
+[sub_resource type="Shortcut" id="Shortcut_b17eg"]
+events = [SubResource("InputEventKey_sm6fg")]
+
+[sub_resource type="Resource" id="Resource_ntx8l"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Fill Ellipse Outline"
+shortcut = SubResource("Shortcut_b17eg")
+
+[sub_resource type="InputEventKey" id="InputEventKey_uatky"]
+ctrl_pressed = true
+keycode = 88
+
+[sub_resource type="Shortcut" id="Shortcut_rqtf5"]
+events = [SubResource("InputEventKey_uatky")]
+
+[sub_resource type="Resource" id="Resource_1vm84"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse"
+icon = ExtResource("5_kek77")
+tooltip = "Fill Ellipse"
+shortcut = SubResource("Shortcut_rqtf5")
+
+[sub_resource type="InputEventKey" id="InputEventKey_wu3dr"]
+alt_pressed = true
+keycode = 88
+
+[sub_resource type="Shortcut" id="Shortcut_cyx1q"]
+events = [SubResource("InputEventKey_wu3dr")]
+
+[sub_resource type="Resource" id="Resource_0dhbp"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_cyx1q")
+
+[sub_resource type="InputEventKey" id="InputEventKey_jx0wj"]
+keycode = 67
+
+[sub_resource type="Shortcut" id="Shortcut_kkkcx"]
+events = [SubResource("InputEventKey_jx0wj")]
+
+[sub_resource type="Resource" id="Resource_34ol3"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "SVG Rectangle"
+shortcut = SubResource("Shortcut_kkkcx")
+
+[sub_resource type="InputEventKey" id="InputEventKey_c2n8d"]
+shift_pressed = true
+keycode = 67
+
+[sub_resource type="Shortcut" id="Shortcut_wy5fy"]
+events = [SubResource("InputEventKey_c2n8d")]
+
+[sub_resource type="Resource" id="Resource_gx4rg"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "SVG Ellipse Outline"
+shortcut = SubResource("Shortcut_wy5fy")
+
+[sub_resource type="InputEventKey" id="InputEventKey_5dllo"]
+ctrl_pressed = true
+keycode = 67
+
+[sub_resource type="Shortcut" id="Shortcut_phcyf"]
+events = [SubResource("InputEventKey_5dllo")]
+
+[sub_resource type="Resource" id="Resource_birbe"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "SVG Ellipse Filled"
+shortcut = SubResource("Shortcut_phcyf")
+
+[sub_resource type="InputEventKey" id="InputEventKey_f1p13"]
+shift_pressed = true
+ctrl_pressed = true
+keycode = 67
+
+[sub_resource type="Shortcut" id="Shortcut_4obbf"]
+events = [SubResource("InputEventKey_f1p13")]
+
+[sub_resource type="Resource" id="Resource_ovcoh"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_4obbf")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ppx11"]
+resource_name = "LeftToolsButtonGroup"
+
+[sub_resource type="InputEventKey" id="InputEventKey_1yv1y"]
+keycode = 65
+
+[sub_resource type="Shortcut" id="Shortcut_5yh34"]
+events = [SubResource("InputEventKey_1yv1y")]
+
+[sub_resource type="Resource" id="Resource_pjuso"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_filled"
+icon = ExtResource("3_272bh")
+tooltip = "Rectangle Filled"
+shortcut = SubResource("Shortcut_5yh34")
+
+[sub_resource type="InputEventKey" id="InputEventKey_23xmf"]
+shift_pressed = true
+keycode = 65
+
+[sub_resource type="Shortcut" id="Shortcut_swlj1"]
+events = [SubResource("InputEventKey_23xmf")]
+
+[sub_resource type="Resource" id="Resource_yysqy"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Ellipse Outline"
+shortcut = SubResource("Shortcut_swlj1")
+
+[sub_resource type="InputEventKey" id="InputEventKey_n5t1e"]
+ctrl_pressed = true
+keycode = 65
+
+[sub_resource type="Shortcut" id="Shortcut_h6isl"]
+events = [SubResource("InputEventKey_n5t1e")]
+
+[sub_resource type="Resource" id="Resource_53bls"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "Ellipse Filled"
+shortcut = SubResource("Shortcut_h6isl")
+
+[sub_resource type="InputEventKey" id="InputEventKey_lwnsi"]
+alt_pressed = true
+keycode = 65
+
+[sub_resource type="Shortcut" id="Shortcut_41lik"]
+events = [SubResource("InputEventKey_lwnsi")]
+
+[sub_resource type="Resource" id="Resource_jbvwl"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_41lik")
+
+[sub_resource type="InputEventKey" id="InputEventKey_sn1fb"]
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_yvsr8"]
+events = [SubResource("InputEventKey_sn1fb")]
+
+[sub_resource type="Resource" id="Resource_vieuh"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "Fill Rectangle"
+shortcut = SubResource("Shortcut_yvsr8")
+
+[sub_resource type="InputEventKey" id="InputEventKey_yjja3"]
+shift_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_l0gw7"]
+events = [SubResource("InputEventKey_yjja3")]
+
+[sub_resource type="Resource" id="Resource_inymm"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Fill Ellipse Outline"
+shortcut = SubResource("Shortcut_l0gw7")
+
+[sub_resource type="InputEventKey" id="InputEventKey_jcxqu"]
+ctrl_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_0arob"]
+events = [SubResource("InputEventKey_jcxqu")]
+
+[sub_resource type="Resource" id="Resource_dij0e"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse"
+icon = ExtResource("5_kek77")
+tooltip = "Fill Ellipse"
+shortcut = SubResource("Shortcut_0arob")
+
+[sub_resource type="InputEventKey" id="InputEventKey_k1udn"]
+alt_pressed = true
+keycode = 83
+
+[sub_resource type="Shortcut" id="Shortcut_wat4s"]
+events = [SubResource("InputEventKey_k1udn")]
+
+[sub_resource type="Resource" id="Resource_ywjan"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_wat4s")
+
+[sub_resource type="InputEventKey" id="InputEventKey_m74q3"]
+keycode = 68
+
+[sub_resource type="Shortcut" id="Shortcut_tko6h"]
+events = [SubResource("InputEventKey_m74q3")]
+
+[sub_resource type="Resource" id="Resource_am8a1"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "SVG Rectangle"
+shortcut = SubResource("Shortcut_tko6h")
+
+[sub_resource type="InputEventKey" id="InputEventKey_8dc3g"]
+shift_pressed = true
+keycode = 68
+
+[sub_resource type="Shortcut" id="Shortcut_htgcl"]
+events = [SubResource("InputEventKey_8dc3g")]
+
+[sub_resource type="Resource" id="Resource_smeu8"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "SVG Ellipse Outline"
+shortcut = SubResource("Shortcut_htgcl")
+
+[sub_resource type="InputEventKey" id="InputEventKey_f3y11"]
+ctrl_pressed = true
+keycode = 68
+
+[sub_resource type="Shortcut" id="Shortcut_cpm2s"]
+events = [SubResource("InputEventKey_f3y11")]
+
+[sub_resource type="Resource" id="Resource_u81y6"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "SVG Ellipse Filled"
+shortcut = SubResource("Shortcut_cpm2s")
+
+[sub_resource type="InputEventKey" id="InputEventKey_rt5wr"]
+shift_pressed = true
+ctrl_pressed = true
+keycode = 68
+
+[sub_resource type="Shortcut" id="Shortcut_mnw77"]
+events = [SubResource("InputEventKey_rt5wr")]
+
+[sub_resource type="Resource" id="Resource_vjgyh"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_mnw77")
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_d5iia"]
+resource_name = "RightToolsButtonGroup"
+
+[sub_resource type="InputEventKey" id="InputEventKey_asu84"]
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_qwt6e"]
+events = [SubResource("InputEventKey_asu84")]
+
+[sub_resource type="Resource" id="Resource_off2o"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_filled"
+icon = ExtResource("3_272bh")
+tooltip = "Rectangle Filled"
+shortcut = SubResource("Shortcut_qwt6e")
+
+[sub_resource type="InputEventKey" id="InputEventKey_tttfs"]
+shift_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_1iygd"]
+events = [SubResource("InputEventKey_tttfs")]
+
+[sub_resource type="Resource" id="Resource_g5xqc"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Ellipse Outline"
+shortcut = SubResource("Shortcut_1iygd")
+
+[sub_resource type="InputEventKey" id="InputEventKey_s4o1y"]
+ctrl_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_7mmqq"]
+events = [SubResource("InputEventKey_s4o1y")]
+
+[sub_resource type="Resource" id="Resource_3exxq"]
+script = ExtResource("2_7mycd")
+title = &"ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "Ellipse Filled"
+shortcut = SubResource("Shortcut_7mmqq")
+
+[sub_resource type="InputEventKey" id="InputEventKey_5aa3q"]
+alt_pressed = true
+keycode = 81
+
+[sub_resource type="Shortcut" id="Shortcut_bmvma"]
+events = [SubResource("InputEventKey_5aa3q")]
+
+[sub_resource type="Resource" id="Resource_shlp4"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_bmvma")
+
+[sub_resource type="InputEventKey" id="InputEventKey_2n44k"]
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_86lig"]
+events = [SubResource("InputEventKey_2n44k")]
+
+[sub_resource type="Resource" id="Resource_ldnlw"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "Fill Rectangle"
+shortcut = SubResource("Shortcut_86lig")
+
+[sub_resource type="InputEventKey" id="InputEventKey_qe8ju"]
+shift_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_bnk2o"]
+events = [SubResource("InputEventKey_qe8ju")]
+
+[sub_resource type="Resource" id="Resource_oosfy"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "Fill Ellipse Outline"
+shortcut = SubResource("Shortcut_bnk2o")
+
+[sub_resource type="InputEventKey" id="InputEventKey_nf4f2"]
+ctrl_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_xkvoa"]
+events = [SubResource("InputEventKey_nf4f2")]
+
+[sub_resource type="Resource" id="Resource_t5kpo"]
+script = ExtResource("2_7mycd")
+title = &"fill_ellipse"
+icon = ExtResource("5_kek77")
+tooltip = "Fill Ellipse"
+shortcut = SubResource("Shortcut_xkvoa")
+
+[sub_resource type="InputEventKey" id="InputEventKey_pw0td"]
+alt_pressed = true
+keycode = 87
+
+[sub_resource type="Shortcut" id="Shortcut_37eu1"]
+events = [SubResource("InputEventKey_pw0td")]
+
+[sub_resource type="Resource" id="Resource_0wkqm"]
+script = ExtResource("2_7mycd")
+title = &"fill_rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_37eu1")
+
+[sub_resource type="InputEventKey" id="InputEventKey_ve5sr"]
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_5s44m"]
+events = [SubResource("InputEventKey_ve5sr")]
+
+[sub_resource type="Resource" id="Resource_ibca3"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_rectangle"
+icon = ExtResource("3_272bh")
+tooltip = "SVG Rectangle"
+shortcut = SubResource("Shortcut_5s44m")
+
+[sub_resource type="InputEventKey" id="InputEventKey_g3y5b"]
+shift_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_1slqb"]
+events = [SubResource("InputEventKey_g3y5b")]
+
+[sub_resource type="Resource" id="Resource_uo83y"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_outline"
+icon = ExtResource("4_5vw27")
+tooltip = "SVG Ellipse Outline"
+shortcut = SubResource("Shortcut_1slqb")
+
+[sub_resource type="InputEventKey" id="InputEventKey_y0aao"]
+ctrl_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_wm5rm"]
+events = [SubResource("InputEventKey_y0aao")]
+
+[sub_resource type="Resource" id="Resource_ekl5k"]
+script = ExtResource("2_7mycd")
+title = &"editor_svg_ellipse_filled"
+icon = ExtResource("5_kek77")
+tooltip = "SVG Ellipse Filled"
+shortcut = SubResource("Shortcut_wm5rm")
+
+[sub_resource type="InputEventKey" id="InputEventKey_fdpg8"]
+shift_pressed = true
+ctrl_pressed = true
+keycode = 69
+
+[sub_resource type="Shortcut" id="Shortcut_rpys8"]
+events = [SubResource("InputEventKey_fdpg8")]
+
+[sub_resource type="Resource" id="Resource_6gr3f"]
+script = ExtResource("2_7mycd")
+title = &"rectangle_outline"
+icon = ExtResource("6_7mycd")
+tooltip = "Rectangle Outline"
+shortcut = SubResource("Shortcut_rpys8")
+
+[node name="FlyoutButtonDemo" type="Control" unique_id=1246487822]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopTools" type="HBoxContainer" parent="." unique_id=260766784]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 16.0
+offset_right = 36.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="Shape" type="Button" parent="TopTools" unique_id=1324016834]
+layout_mode = 2
+tooltip_text = "Rectangle Filled"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_4c57u")
+shortcut = SubResource("Shortcut_dg77c")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ycdy4"), SubResource("Resource_2cqfq"), SubResource("Resource_cegan"), SubResource("Resource_ryguw")])
+
+[node name="Fill" type="Button" parent="TopTools" unique_id=1388562882]
+layout_mode = 2
+tooltip_text = "Fill Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4c57u")
+shortcut = SubResource("Shortcut_1u8w0")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_0odxb"), SubResource("Resource_xuqvo"), SubResource("Resource_seu75"), SubResource("Resource_4k2k6")])
+
+[node name="Editor" type="Button" parent="TopTools" unique_id=915563156]
+layout_mode = 2
+tooltip_text = "SVG Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4c57u")
+shortcut = SubResource("Shortcut_ok6jj")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_facbu"), SubResource("Resource_h8e4i"), SubResource("Resource_d2t1y"), SubResource("Resource_qnost")])
+
+[node name="BottomTools" type="HBoxContainer" parent="." unique_id=195381803]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -40.0
+offset_right = 36.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Shape" type="Button" parent="BottomTools" unique_id=170856792]
+layout_mode = 2
+tooltip_text = "Rectangle Filled"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_wnkbs")
+shortcut = SubResource("Shortcut_0cbny")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_hrvbo"), SubResource("Resource_abqjc"), SubResource("Resource_e71vb"), SubResource("Resource_uit24")])
+
+[node name="Fill" type="Button" parent="BottomTools" unique_id=844946378]
+layout_mode = 2
+tooltip_text = "Fill Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_wnkbs")
+shortcut = SubResource("Shortcut_rm4vd")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjyto"), SubResource("Resource_ntx8l"), SubResource("Resource_1vm84"), SubResource("Resource_0dhbp")])
+
+[node name="Editor" type="Button" parent="BottomTools" unique_id=857807246]
+layout_mode = 2
+tooltip_text = "SVG Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_wnkbs")
+shortcut = SubResource("Shortcut_kkkcx")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_34ol3"), SubResource("Resource_gx4rg"), SubResource("Resource_birbe"), SubResource("Resource_ovcoh")])
+
+[node name="LeftTools" type="VBoxContainer" parent="." unique_id=319926678]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -36.0
+offset_right = 40.0
+offset_bottom = 36.0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Shape" type="Button" parent="LeftTools" unique_id=1724143425]
+layout_mode = 2
+tooltip_text = "Rectangle Filled"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_ppx11")
+shortcut = SubResource("Shortcut_5yh34")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 1
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_pjuso"), SubResource("Resource_yysqy"), SubResource("Resource_53bls"), SubResource("Resource_jbvwl")])
+
+[node name="Fill" type="Button" parent="LeftTools" unique_id=1766242921]
+layout_mode = 2
+tooltip_text = "Fill Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ppx11")
+shortcut = SubResource("Shortcut_yvsr8")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 1
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_vieuh"), SubResource("Resource_inymm"), SubResource("Resource_dij0e"), SubResource("Resource_ywjan")])
+
+[node name="Editor" type="Button" parent="LeftTools" unique_id=1052003120]
+layout_mode = 2
+tooltip_text = "SVG Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ppx11")
+shortcut = SubResource("Shortcut_tko6h")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 1
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_am8a1"), SubResource("Resource_smeu8"), SubResource("Resource_u81y6"), SubResource("Resource_vjgyh")])
+
+[node name="RightTools" type="VBoxContainer" parent="." unique_id=1699612820]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_right = -16.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Shape" type="Button" parent="RightTools" unique_id=535009652]
+layout_mode = 2
+tooltip_text = "Rectangle Filled"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_d5iia")
+shortcut = SubResource("Shortcut_qwt6e")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 0
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_off2o"), SubResource("Resource_g5xqc"), SubResource("Resource_3exxq"), SubResource("Resource_shlp4")])
+
+[node name="Fill" type="Button" parent="RightTools" unique_id=1973720545]
+layout_mode = 2
+tooltip_text = "Fill Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_d5iia")
+shortcut = SubResource("Shortcut_86lig")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 0
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ldnlw"), SubResource("Resource_oosfy"), SubResource("Resource_t5kpo"), SubResource("Resource_0wkqm")])
+
+[node name="Editor" type="Button" parent="RightTools" unique_id=315866343]
+layout_mode = 2
+tooltip_text = "SVG Rectangle"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_d5iia")
+shortcut = SubResource("Shortcut_5s44m")
+icon = ExtResource("3_272bh")
+flat = true
+script = ExtResource("1_lquwl")
+popup_direction = 0
+content_direction = 0
+options = Array[ExtResource("2_7mycd")]([SubResource("Resource_ibca3"), SubResource("Resource_uo83y"), SubResource("Resource_ekl5k"), SubResource("Resource_6gr3f")])

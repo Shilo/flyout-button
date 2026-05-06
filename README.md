@@ -11,14 +11,14 @@ addons/flyout_button
 
 Git subtree is useful here because the dependent repo gets real committed files instead of a submodule pointer. That means the project still opens normally in Godot and does not require an extra clone step.
 
-This repository's `main` branch is the addon payload. When a dependent project pulls it as a subtree, the repo root is placed directly into `addons/flyout_button`.
+This repository is a full Godot demo project. The reusable addon files live in `addons/flyout_button`, so subtree consumers should use the `flyout-button-addon` split branch. That branch contains only the files that belong inside a dependent project's `addons/flyout_button` directory.
 
 ### Initialize the subtree
 
 From the root of the repo that depends on Flyout Button:
 
 ```powershell
-git subtree add --prefix=addons/flyout_button https://github.com/Shilo/flyout-button.git main --squash
+git subtree add --prefix=addons/flyout_button https://github.com/Shilo/flyout-button.git flyout-button-addon --squash
 ```
 
 This adds the shared Flyout Button files into `addons/flyout_button` and records enough subtree history for future updates.
@@ -28,7 +28,7 @@ This adds the shared Flyout Button files into `addons/flyout_button` and records
 From the dependent repo root:
 
 ```powershell
-git subtree pull --prefix=addons/flyout_button https://github.com/Shilo/flyout-button.git main --squash
+git subtree pull --prefix=addons/flyout_button https://github.com/Shilo/flyout-button.git flyout-button-addon --squash
 ```
 
 If Git reports conflicts, resolve them like a normal merge, then commit the result.
@@ -50,7 +50,7 @@ In any dependent repo, create `.vscode/tasks.json` with this task:
         "pull",
         "--prefix=addons/flyout_button",
         "https://github.com/Shilo/flyout-button.git",
-        "main",
+        "flyout-button-addon",
         "--squash"
       ],
       "problemMatcher": []
@@ -77,12 +77,13 @@ Optional keyboard shortcut in VS Code `keybindings.json`:
 
 The task still runs Git under the hood, but you can trigger it from VS Code without retyping the subtree command.
 
-## Rare: push subtree changes back to Flyout Button
+## Maintainer: refresh the split branch
 
-Most Flyout Button changes should be made in this repo directly. If a dependent repo makes a useful fix inside `addons/flyout_button`, it can be pushed back with:
+After changing files under `addons/flyout_button` in this repo, refresh and push the split branch before dependent repos pull:
 
 ```powershell
-git subtree push --prefix=addons/flyout_button https://github.com/Shilo/flyout-button.git main
+git subtree split --prefix=addons/flyout_button main --branch flyout-button-addon
+git push origin flyout-button-addon
 ```
 
-Only use this when you intentionally want the dependent repo's `addons/flyout_button` changes to become the latest Flyout Button `main`.
+Most Flyout Button changes should be made in this repo directly. If a dependent repo makes a useful fix inside `addons/flyout_button`, port that fix back here, refresh the split branch, and then let dependent repos pull the updated subtree.
