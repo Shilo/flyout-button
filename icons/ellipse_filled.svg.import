@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn47fjk6qduep"
-path="res://.godot/imported/EllipseFilled.svg-66a658eb0d8fdd413393e382aaa8eaaa.ctex"
+path="res://.godot/imported/ellipse_filled.svg-6c0c3c649b8bfb21ba9cc991c34ee38b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icons/EllipseFilled.svg"
-dest_files=["res://.godot/imported/EllipseFilled.svg-66a658eb0d8fdd413393e382aaa8eaaa.ctex"]
+source_file="res://icons/ellipse_filled.svg"
+dest_files=["res://.godot/imported/ellipse_filled.svg-6c0c3c649b8bfb21ba9cc991c34ee38b.ctex"]
 
 [params]
 

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c7hbyexi83ha6" path="res://addons/flyout_button/flyout_button.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://dg12678wjk1m3" path="res://addons/flyout_button/flyout_button_item.gd" id="2_7mycd"]
-[ext_resource type="Texture2D" uid="uid://ypqyaiosux1n" path="res://icons/RectangleFilled.svg" id="3_272bh"]
-[ext_resource type="Texture2D" uid="uid://5hjp6yccxqb4" path="res://icons/Ellipse.svg" id="4_5vw27"]
-[ext_resource type="Texture2D" uid="uid://dn47fjk6qduep" path="res://icons/EllipseFilled.svg" id="5_kek77"]
-[ext_resource type="Texture2D" uid="uid://bh2mgirh3k4mc" path="res://icons/Rectangle.svg" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ypqyaiosux1n" path="res://icons/rectangle_filled.svg" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://5hjp6yccxqb4" path="res://icons/ellipse.svg" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dn47fjk6qduep" path="res://icons/ellipse_filled.svg" id="5_kek77"]
+[ext_resource type="Texture2D" uid="uid://bh2mgirh3k4mc" path="res://icons/rectangle.svg" id="6_7mycd"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_4c57u"]
 resource_name = "TopToolsButtonGroup"
