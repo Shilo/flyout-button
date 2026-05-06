@@ -109,3 +109,9 @@ The task still runs Git under the hood, but you can trigger it from VS Code with
 ## 📦 Dependencies
 
 None.
+
+## 🔁 Used By
+
+- [Tyle Map Editor](https://github.com/Shilo/tyle-map-editor) - uses Flyout Button as a child subtree at `addons/tyle_map_editor/flyout_button`.
+- [PentaTile](https://github.com/Shilo/PentaTile) - receives Flyout Button recursively through Tyle Map Editor at `addons/penta_tile/tyle_map_editor/flyout_button`.
+- [VirtuMap](https://github.com/Shilo/VirtuMap) - receives Flyout Button recursively through PentaTile and Tyle Map Editor at `addons/virtumap/penta_tile/tyle_map_editor/flyout_button`.
