@@ -12,7 +12,7 @@ git push origin addon
 
 The `addon` branch contains only the files that belong inside a dependent project's `addons/flyout_button` directory.
 
-The `.github/workflows/sync-addon-branch.yml` workflow runs this split automatically whenever `main` receives changes under `addons/flyout_button`. Use the manual commands above when creating the branch for the first time, repairing it, or refreshing it outside GitHub Actions.
+The `.github/workflows/sync-addon-branch.yml` workflow syncs the `addons/flyout_button` directory to the `addon` branch automatically whenever `main` receives changes under `addons/flyout_button`. Use the manual commands above when creating the branch for the first time, repairing it, or refreshing it outside GitHub Actions.
 
 ## Using Flyout Button as a subtree dependency
 
@@ -89,3 +89,7 @@ Optional keyboard shortcut in VS Code `keybindings.json`:
 ```
 
 The task still runs Git under the hood, but you can trigger it from VS Code without retyping the subtree command.
+
+## 📦 Dependencies
+
+None.
